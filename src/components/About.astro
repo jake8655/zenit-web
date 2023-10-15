@@ -1,0 +1,94 @@
+<section class='relative' id='about'>
+  <article
+    class='h-[35vh] bg-[url(/images/about-us-bg.jpg)] bg-cover bg-center bg-no-repeat'
+  >
+    <div class='absolute left-[50%] items-center'>
+      <h2 class='pt-7 text-4xl font-semibold text-primary'>O nás</h2>
+      <div class='line mt-1'></div>
+      <p
+        class='description mb-5 w-[25vw] pt-4 text-sm font-semibold text-primary-foreground'
+      >
+        Tréneri, športovci a seriózni klienti hľadajú tie najtvrdšie a
+        najproduktívnejšie tréningové techniky, aby okorenili svoje tréningy a
+        poskytli skutočne jedinečnú výzvu pre ich telo a myseľ. Ale čítajte:
+        one-arm push-ups, pistols, pull-ups, handstands, hanging levers a
+        ďalšie! Ak Vás to zaujalo, kliknite na
+      </p>
+      <button
+        class='border border-primary px-7 py-2 text-center text-lg hover:border-primary-foreground hover:text-primary'
+        >Zisti viac</button
+      >
+    </div>
+  </article>
+
+  <div class='bg-[#464646] px-[calc((100%-1110px)/2)]'>
+    <img
+      src='/images/rode-gym.jpg'
+      alt='Žena sa pripravuje na zdvíhanie činky'
+      width='400'
+      class='mt-[-145px] inline'
+    />
+    <figure class='relative inline-block'>
+      <img src='/images/gym-girls.jpg' alt='Ženy cvičia' width='540' />
+      <figcaption
+        class='absolute inset-0 grid place-items-center text-center text-sm'
+      >
+        Perfektný víkend, stretol som veľa skvelých ľudí a odniesol som si toho
+        veľa. Ďakujem za skúsenosť Vám a Vášmu profesionálnemu tímu za to, že
+        veci vyzerajú tak ako vyzerajú.
+      </figcaption>
+    </figure>
+
+    <article
+      class='trainers mt-12 h-[750px] border-y-[10px] border-primary bg-black bg-[url(/images/gym2.jpg)] bg-contain bg-center bg-no-repeat p-16'
+    >
+      <h2 class='mt-[-25px] text-center text-3xl uppercase'>Tréneri</h2>
+      <div class='flex'>
+        <div class='flex flex-col'>
+          <img src='/images/trainers1.jpg' class='rounded-full' width='242' />
+          <div
+            class='w-[400px] rounded-lg bg-[#CCCCCC] p-4 text-center text-secondary'
+          >
+            <h3 class='mb-2 text-xl'>Monika</h3>
+            <p class='text-sm'>
+              Fitness trénerka Monika vedie osobné tréningy, skupinové lekcie,
+              Core training s využitím bosu. Ďalej sa venuje strave, tvorbe
+              jedálničkov, modernej fitness výžive a emočnému tuku.
+            </p>
+          </div>
+        </div>
+        <div class='ml-auto'>
+          <img src='/images/trainers2.jpg' class='rounded-full' />
+        </div>
+      </div>
+    </article>
+  </div>
+</section>
+
+<style>
+  .line {
+    width: 90px;
+    height: 5px;
+    @apply bg-primary-foreground;
+    border-radius: 100vw;
+  }
+  .description {
+    line-height: 1.5;
+  }
+  img {
+    vertical-align: bottom;
+  }
+  .trainers {
+    background-origin: content-box;
+  }
+  h2:before {
+    content: url(/images/right-quote-white.png);
+    vertical-align: 0.5em;
+    margin-right: 0.75em;
+  }
+  h2:after {
+    content: url(/images/left-quote-white.png);
+    vertical-align: -0.5em;
+    margin-left: 0.75em;
+  }
+</style>
