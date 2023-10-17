@@ -1,5 +1,7 @@
 ---
 import About from '~/components/About.astro';
+import Courses from '~/components/Courses.astro';
+import Footer from '~/components/Footer.astro';
 import Home from '~/components/Home.astro';
 import News from '~/components/News.astro';
 import Layout from '~/layouts/Layout.astro';
@@ -8,5 +10,9 @@ import Layout from '~/layouts/Layout.astro';
 <Layout>
   <Home />
   <News />
-  <About />
+  <div class='bg-[#464646]'>
+    <About />
+    <Courses />
+    <Footer />
+  </div>
 </Layout>

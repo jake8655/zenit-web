@@ -6,12 +6,14 @@
         style='box-shadow: 0 0 80px 80px black inset'
       >
         <div class='absolute left-0 top-[55%] pl-[38px]'>
-          <blockquote class='text-4xl font-bold'>
-            <p class='inline-block'>
+          <blockquote
+            class='text-4xl font-bold before:align-[1.75em] before:content-[url(/images/right-quote.png)] after:align-[-.75em] after:content-[url(/images/left-quote.png)]'
+          >
+            <h1 class='inline-block'>
               ŠTÚDIO GymZ,<br /><span class='text-primary'
                 >ktoré vám vždy ponúkne viac.</span
               >
-            </p>
+            </h1>
           </blockquote>
           <div class='mt-1 flex gap-x-4'>
             <a
@@ -30,13 +32,3 @@
     </div>
   </div>
 </section>
-<style>
-  blockquote:before {
-    content: url(/images/right-quote.png);
-    vertical-align: 1.75em;
-  }
-  blockquote:after {
-    content: url(/images/left-quote.png);
-    vertical-align: -0.75em;
-  }
-</style>

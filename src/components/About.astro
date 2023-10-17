@@ -1,12 +1,22 @@
+---
+import Trainer from './Trainer.astro';
+
+const monika =
+  'Fitness trénerka Monika vedie osobné tréningy, skupinové lekcie, Core training s využitím bosu. Ďalej sa venuje strave, tvorbe jedálničkov, modernej fitness výžive a emočnému tuku.';
+const matej =
+  'V mladosti sa venoval futbalu, boxu, judu a kulturistike. Už viac ako 15 rokov trénuje provesionálnych športovcov. Špecializuje sa na fitness tréningy zo zameraním na naberanie svalovej hmoty, tvarovaniu postavy a redukcie tuku.';
+---
+
 <section class='relative' id='about'>
   <article
     class='h-[35vh] bg-[url(/images/about-us-bg.jpg)] bg-cover bg-center bg-no-repeat'
   >
     <div class='absolute left-[50%] items-center'>
       <h2 class='pt-7 text-4xl font-semibold text-primary'>O nás</h2>
-      <div class='line mt-1'></div>
+      <div class='mt-1 h-[5px] w-[90px] rounded-full bg-primary-foreground'>
+      </div>
       <p
-        class='description mb-5 w-[25vw] pt-4 text-sm font-semibold text-primary-foreground'
+        class='mb-5 w-[25vw] pt-4 text-sm font-semibold leading-[1.5] text-primary-foreground'
       >
         Tréneri, športovci a seriózni klienti hľadajú tie najtvrdšie a
         najproduktívnejšie tréningové techniky, aby okorenili svoje tréningy a
@@ -21,15 +31,20 @@
     </div>
   </article>
 
-  <div class='bg-[#464646] px-[calc((100%-1110px)/2)]'>
+  <div class='px-[calc((100%-1110px)/2)]'>
     <img
       src='/images/rode-gym.jpg'
       alt='Žena sa pripravuje na zdvíhanie činky'
       width='400'
-      class='mt-[-145px] inline'
+      class='mt-[-145px] inline align-bottom'
     />
     <figure class='relative inline-block'>
-      <img src='/images/gym-girls.jpg' alt='Ženy cvičia' width='540' />
+      <img
+        src='/images/gym-girls.jpg'
+        alt='Ženy cvičia'
+        width='540'
+        class='align-bottom'
+      />
       <figcaption
         class='absolute inset-0 grid place-items-center text-center text-sm'
       >
@@ -40,55 +55,22 @@
     </figure>
 
     <article
-      class='trainers mt-12 h-[750px] border-y-[10px] border-primary bg-black bg-[url(/images/gym2.jpg)] bg-contain bg-center bg-no-repeat p-16'
+      class='mt-12 border-y-[10px] border-primary bg-black bg-[url(/images/gym2.jpg)] bg-contain bg-center bg-no-repeat bg-origin-content p-16'
     >
-      <h2 class='mt-[-25px] text-center text-3xl uppercase'>Tréneri</h2>
+      <h2
+        class='mt-[-25px] text-center text-3xl uppercase before:mr-[.75em] before:align-[.5em] before:content-[url(/images/right-quote-white.png)] after:ml-[.75em] after:align-[-.5em] after:content-[url(/images/left-quote-white.png)]'
+      >
+        Tréneri
+      </h2>
       <div class='flex'>
-        <div class='flex flex-col'>
-          <img src='/images/trainers1.jpg' class='rounded-full' width='242' />
-          <div
-            class='w-[400px] rounded-lg bg-[#CCCCCC] p-4 text-center text-secondary'
-          >
-            <h3 class='mb-2 text-xl'>Monika</h3>
-            <p class='text-sm'>
-              Fitness trénerka Monika vedie osobné tréningy, skupinové lekcie,
-              Core training s využitím bosu. Ďalej sa venuje strave, tvorbe
-              jedálničkov, modernej fitness výžive a emočnému tuku.
-            </p>
-          </div>
-        </div>
-        <div class='ml-auto'>
-          <img src='/images/trainers2.jpg' class='rounded-full' />
-        </div>
+        <Trainer path='/images/trainers1.jpg' name='Monika' text={monika} />
+        <Trainer
+          classNames='ml-auto'
+          path='/images/trainers2.jpg'
+          name='Matej'
+          text={matej}
+        />
       </div>
     </article>
   </div>
 </section>
-
-<style>
-  .line {
-    width: 90px;
-    height: 5px;
-    @apply bg-primary-foreground;
-    border-radius: 100vw;
-  }
-  .description {
-    line-height: 1.5;
-  }
-  img {
-    vertical-align: bottom;
-  }
-  .trainers {
-    background-origin: content-box;
-  }
-  h2:before {
-    content: url(/images/right-quote-white.png);
-    vertical-align: 0.5em;
-    margin-right: 0.75em;
-  }
-  h2:after {
-    content: url(/images/left-quote-white.png);
-    vertical-align: -0.5em;
-    margin-left: 0.75em;
-  }
-</style>
