@@ -30,8 +30,40 @@ import Nav from '~/components/Nav.astro';
     <main>
       <slot />
     </main>
+    <button
+      class='group fixed bottom-[30px] right-[30px] bg-primary p-4 opacity-0 transition-all hover:bg-third'
+      id='scrollToTop'
+    >
+      <i class='fas fa-arrow-up text-white group-hover:text-secondary'></i>
+    </button>
     <Footer />
   </body>
+
+  <script>
+    const scrollBtn = document.getElementById('scrollToTop')!;
+
+    scrollBtn.addEventListener('click', () => {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth',
+      });
+    });
+
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 36) {
+        scrollBtn.classList.remove('opacity-0');
+      } else {
+        scrollBtn.classList.add('opacity-0');
+      }
+    });
+
+    // Run once on load
+    if (window.scrollY > 36) {
+      scrollBtn.classList.remove('opacity-0');
+    } else {
+      scrollBtn.classList.add('opacity-0');
+    }
+  </script>
 </html>
 
 <style is:global>
@@ -44,6 +76,7 @@ import Nav from '~/components/Nav.astro';
       font-family: 'Jost', sans-serif;
       color: #ffffff;
       scroll-behavior: smooth;
+      scroll-padding: 72px;
     }
     .bg-secondary {
       background-color: #091e3e;
