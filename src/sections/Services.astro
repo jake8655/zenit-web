@@ -1,0 +1,52 @@
+---
+import Service from '~/components/Service.astro';
+---
+
+<section
+  class='flex flex-col gap-8 px-[calc((100%-1320px)/2)] pt-12 text-secondary'
+  id='services'
+>
+  <article class='flex gap-8'>
+    <img src='/assets/service-promo.jpg' alt='Žena sa usmieva' width='500' />
+    <div class='flex flex-col'>
+      <h3 class='mb-2 font-medium uppercase text-primary'>Naše služby</h3>
+      <p class='text-6xl font-semibold'>
+        Ponúkame iba služby tej<br />najvyššej kvality
+      </p>
+      <div class='mt-auto flex gap-8'>
+        <Service
+          title='Estetická stomatológia'
+          alt='Vŕtanie zubov'
+          img='/assets/service-1.jpg'
+        />
+        <Service
+          title='Zubná chirurgia'
+          alt='Zubná operácia'
+          img='/assets/service-2.jpg'
+        />
+      </div>
+    </div>
+  </article>
+  <article class='grid grid-cols-3 gap-8'>
+    <Service
+      title='Zubné implantáty'
+      alt='Zubné implantáty'
+      img='/assets/service-3.jpg'
+    />
+    <Service
+      title='Bielenie zubov'
+      alt='Bielenie zubov'
+      img='/assets/service-4.jpg'
+    />
+    <div
+      class='flex flex-grow flex-col justify-center gap-4 bg-primary p-4 text-center text-white'
+    >
+      <h4 class='text-4xl font-medium'>Objednajte sa</h4>
+      <p class='text-md'>
+        Ak máte problémy so zubami, alebo sa chcete len poradiť. Neváhajte nám
+        zavolať na číslo:
+      </p>
+      <p class='text-4xl font-semibold'>+000 123 456 789</p>
+    </div>
+  </article>
+</section>

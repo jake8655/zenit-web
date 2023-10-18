@@ -1,0 +1,14 @@
+---
+interface Props {
+  title: string;
+  img: string;
+  alt: string;
+}
+
+const { title, img, alt } = Astro.props;
+---
+
+<div class='bg-banner hover:shadow-xl'>
+  <img src={img} {alt} />
+  <h4 class='p-4 text-center font-semibold'>{title}</h4>
+</div>
