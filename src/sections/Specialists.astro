@@ -1,0 +1,44 @@
+---
+import Specialist from '~/components/Specialist.astro';
+---
+
+<section class='pt-8 text-secondary' id='specialists'>
+  <img src='/assets/bg-2.jpg' class='h-[400px] w-full object-cover' />
+  <div
+    class='mt-[-100px] grid grid-cols-3 grid-rows-2 gap-8 px-[calc((100%-1320px)/2)]'
+  >
+    <div class='bg-banner p-6'>
+      <h3 class='pb-4 text-lg font-medium uppercase text-primary'>
+        Naši špecialisti
+      </h3><p class='mb-6 text-3xl font-semibold'>
+        Spoznaje naších certifikovaných zubných profesionálov
+      </p>
+      <a href='#order' class='bg-primary px-6 py-2 text-white'>Objednajte sa</a>
+    </div>
+    <Specialist
+      name='Dr. David Král'
+      img='/assets/team/team-1.jpg'
+      role='Zubný chirurg'
+    />
+    <Specialist
+      name='Dr. Katerína Králová'
+      img='/assets/team/team-2.jpg'
+      role='Zubný chirurg'
+    />
+    <Specialist
+      name='Dr. Tomáš Kováč'
+      img='/assets/team/team-3.jpg'
+      role='Zubný chirurg'
+    />
+    <Specialist
+      name='Dr. Jana Kovaríková'
+      img='/assets/team/team-4.jpg'
+      role='Zubný chirurg'
+    />
+    <Specialist
+      name='Dr. Jakub Tóth'
+      img='/assets/team/team-5.jpg'
+      role='Zubný chirurg'
+    />
+  </div>
+</section>
