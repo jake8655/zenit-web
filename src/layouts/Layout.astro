@@ -31,10 +31,10 @@ import Nav from '~/components/Nav.astro';
       <slot />
     </main>
     <button
-      class='group fixed bottom-[30px] right-[30px] bg-primary p-4 opacity-0 transition-all hover:bg-third'
+      class='fixed bottom-[30px] right-[30px] bg-primary p-4 text-white opacity-0 transition-all [visibility:hidden] hover:bg-third hover:text-secondary'
       id='scrollToTop'
     >
-      <i class='fas fa-arrow-up text-white group-hover:text-secondary'></i>
+      <i class='fas fa-arrow-up'></i>
     </button>
     <Footer />
   </body>
@@ -51,16 +51,20 @@ import Nav from '~/components/Nav.astro';
 
     window.addEventListener('scroll', () => {
       if (window.scrollY > 36) {
+        scrollBtn.classList.remove('[visibility:hidden]');
         scrollBtn.classList.remove('opacity-0');
       } else {
+        scrollBtn.classList.add('[visibility:hidden]');
         scrollBtn.classList.add('opacity-0');
       }
     });
 
     // Run once on load
     if (window.scrollY > 36) {
+      scrollBtn.classList.remove('[visibility:hidden]');
       scrollBtn.classList.remove('opacity-0');
     } else {
+      scrollBtn.classList.add('[visibility:hidden]');
       scrollBtn.classList.add('opacity-0');
     }
   </script>
@@ -76,7 +80,7 @@ import Nav from '~/components/Nav.astro';
       font-family: 'Jost', sans-serif;
       color: #ffffff;
       scroll-behavior: smooth;
-      scroll-padding: 72px;
+      scroll-padding: 103px;
     }
     .bg-secondary {
       background-color: #091e3e;
