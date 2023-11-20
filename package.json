@@ -4,7 +4,7 @@
   "type": "module",
   "version": "0.0.1",
   "scripts": {
-    "dev": "bun --bun astro dev",
+    "dev": "astro dev",
     "bun:start": "bun ./dist/server/entry.mjs",
     "start": "node ./dist/server/entry.mjs",
     "build": "bun --bun astro build",
@@ -15,14 +15,21 @@
   },
   "dependencies": {
     "@astrojs/node": "^6.0.4",
+    "@astrojs/react": "^3.0.5",
     "@astrojs/tailwind": "^5.0.2",
+    "@types/react": "^18.0.21",
+    "@types/react-dom": "^18.0.6",
     "astro": "^3.3.0",
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0",
+    "react-swipe": "^6.0.4",
     "zod": "^3.22.4"
   },
   "devDependencies": {
     "@ianvs/prettier-plugin-sort-imports": "^4.1.1",
     "@total-typescript/ts-reset": "^0.5.1",
     "@types/eslint": "^8.44.4",
+    "@types/react-swipe": "^6.0.4",
     "@typescript-eslint/eslint-plugin": "^6.7.5",
     "@typescript-eslint/parser": "^6.7.5",
     "bun-types": "^1.0.13",
