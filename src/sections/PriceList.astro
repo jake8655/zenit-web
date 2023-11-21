@@ -8,8 +8,6 @@ import Slideshow from '~/components/Slideshow';
 import { db } from '~/db';
 import { type pricelist } from '~/db/schema';
 
-export const prerender = false;
-
 interface Pricelist
   extends Omit<InferSelectModel<typeof pricelist>, 'benefits'> {
   benefits: string[];

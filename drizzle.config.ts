@@ -6,7 +6,7 @@ dotenv.config({
 });
 
 if (!process.env.DATABASE_USER || !process.env.DATABASE_PASSWORD) {
-  throw new Error('DATABASE_URL is not set');
+  throw new Error('DATABASE_USER or DATABASE_PASSWORD not set');
 }
 
 export default {
