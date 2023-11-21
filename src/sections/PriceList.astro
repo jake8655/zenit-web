@@ -1,7 +1,58 @@
 ---
 import '@total-typescript/ts-reset';
 
+import type { InferSelectModel } from 'drizzle-orm';
+import { z } from 'zod';
+
 import Slideshow from '~/components/Slideshow';
+import { db } from '~/db';
+import { type pricelist } from '~/db/schema';
+
+export const prerender = false;
+
+interface Pricelist
+  extends Omit<InferSelectModel<typeof pricelist>, 'benefits'> {
+  benefits: string[];
+}
+
+const convertPrices = (prices: Pricelist[]) => {
+  if (prices.length % 2 === 0) {
+    const chunks = [];
+    while (prices.length) {
+      chunks.push(prices.splice(0, 2));
+    }
+    return chunks;
+  }
+
+  const chunks = [];
+  while (prices.length > 1) {
+    chunks.push(prices.splice(0, 2));
+  }
+  chunks.push(prices);
+  return chunks;
+};
+
+const prices = await db.query.pricelist.findMany();
+
+const formatter = Intl.NumberFormat('sk-SK', {
+  style: 'currency',
+  currency: 'EUR',
+  maximumFractionDigits: 0,
+});
+const schema = z.array(z.string());
+
+const parsedPrices = prices.map(price => {
+  const benefits = schema.safeParse(JSON.parse(price.benefits));
+
+  return {
+    ...price,
+    price: formatter.format(price.price),
+    benefits: benefits.success ? benefits.data : [],
+  };
+});
+
+// @ts-expect-error TSSERVER AINT FOCKING WORKING
+const convertedPrices = convertPrices(parsedPrices);
 ---
 
 <section class='pt-16 text-secondary'>
@@ -55,8 +106,8 @@ import Slideshow from '~/components/Slideshow';
       </p>
       <p class='text-4xl font-bold'>+000 123 456 789</p>
     </aside>
-    <aside class='text-red-500'>
-      <Slideshow client:load />
+    <aside>
+      <Slideshow client:visible prices={convertedPrices} />
     </aside>
   </article>
 </section>

@@ -6,12 +6,15 @@
   "scripts": {
     "dev": "astro dev",
     "bun:start": "bun ./dist/server/entry.mjs",
-    "start": "node ./dist/server/entry.mjs",
+    "start": "node -r dotenv/config ./dist/server/entry.mjs",
     "build": "bun --bun astro build",
     "preview": "astro preview",
     "astro": "astro",
     "format": "prettier --write \"**/*.{js,cjs,mjs,ts,tsx,json,md,astro}\"",
-    "lint": "eslint --ext .js,.jsx,.ts,.tsx,.astro ."
+    "lint": "eslint --ext .js,.jsx,.ts,.tsx,.astro ./src",
+    "typecheck": "tsc --noEmit",
+    "db:push": "drizzle-kit push:mysql",
+    "db:studio": "drizzle-kit studio"
   },
   "dependencies": {
     "@astrojs/node": "^6.0.4",
@@ -20,6 +23,9 @@
     "@types/react": "^18.0.21",
     "@types/react-dom": "^18.0.6",
     "astro": "^3.3.0",
+    "dotenv-cli": "^7.3.0",
+    "drizzle-orm": "^0.29.0",
+    "mysql2": "^3.6.4",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
     "react-swipe": "^6.0.4",
@@ -33,6 +39,7 @@
     "@typescript-eslint/eslint-plugin": "^6.7.5",
     "@typescript-eslint/parser": "^6.7.5",
     "bun-types": "^1.0.13",
+    "drizzle-kit": "^0.20.4",
     "eslint-plugin-astro": "^0.29.1",
     "prettier": "^3.0.3",
     "prettier-plugin-astro": "^0.12.0",
