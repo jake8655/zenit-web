@@ -25,16 +25,20 @@
       >
         Chcem dostávať novinky
       </h2>
-      <form class='flex flex-col gap-4 text-sm text-text'>
+      <form class='flex flex-col gap-4 text-sm text-text' method='post'>
         <input
           type='text'
           placeholder='Zadajte svoje meno'
           class='w-full px-4 py-2 text-right placeholder:text-right'
+          required
+          minlength='4'
+          maxlength='64'
         />
         <input
-          type='text'
+          type='email'
           placeholder='Zadajte emailovú adresu'
           class='w-full px-4 py-2 text-right placeholder:text-right'
+          required
         />
         <button
           type='submit'

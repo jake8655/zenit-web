@@ -2,6 +2,9 @@
 import SelectionCard from '~/components/SelectionCard.astro';
 import SelectionImage from '~/components/SelectionImage.astro';
 import SelectionPlace from '~/components/SelectionPlace.astro';
+import { db } from '~/db';
+
+const locations = await db.query.location.findMany();
 ---
 
 <section class='min-h-screen grid-rows-5 py-12 lg:grid'>
@@ -39,9 +42,10 @@ import SelectionPlace from '~/components/SelectionPlace.astro';
     </SelectionImage>
   </div>
   <div class='grid gap-4 p-2 lg:grid-cols-4'>
-    <SelectionPlace title='Štrbské Pleso' imgPath='/images/loc01.jpg' />
-    <SelectionPlace title='Veľké Solisko' imgPath='/images/loc02.jpg' />
-    <SelectionPlace title='Kriváň' imgPath='/images/loc03.jpg' />
-    <SelectionPlace title='Končistá' imgPath='/images/res01.jpg' />
+    {
+      locations.map(location => (
+        <SelectionPlace title={location.name} imgPath={location.imagePath} />
+      ))
+    }
   </div>
 </section>
