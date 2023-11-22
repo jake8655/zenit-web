@@ -5,14 +5,17 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        lato: ['Lato', 'sans-serif'],
+        roboto: ['Roboto', 'sans-serif'],
+        patua: ['Patua One', 'cursive'],
       },
       colors: {
-        primary: '#06a3da',
-        secondary: '#091e3e',
-        banner: '#eef9ff',
-        'secondary-light': '#6b6a75',
-        third: '#f57e57',
+        bg: '#E4E2E0',
+        text: '#525B64',
+        icon: '#617391',
+        'colorful-text': '#FFFFFF',
+        'colorful-bg': '#DDDDDD',
+        'colorful-text-hover': '#111111',
+        'colorful-bg-hover': '#999999',
       },
     },
   },

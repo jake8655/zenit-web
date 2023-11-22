@@ -1,19 +1,47 @@
 <section
-  class='flex h-[600px] flex-col items-center justify-center gap-4 bg-[#0f1d2e] bg-[url(/assets/bg-1.jpg)] text-center bg-blend-overlay'
-  id='home'
+  class='flex min-h-screen items-center justify-center bg-[url(/images/head01.jpg)] bg-cover bg-center bg-no-repeat px-4 lg:min-h-[70vh] lg:px-[calc((100vw-1140px)/2)]'
 >
-  <p class='text-lg uppercase'>
-    Zuby zdravé, úspev krásny: Starajte sa o svoje ústa každý deň!
-  </p>
-  <h2 class='text-6xl font-bold'>Získaje najlepšiu<br />zubnú staroslivosť.</h2>
-  <div class='flex gap-2'>
-    <a
-      class='bg-primary px-6 py-2 transition-colors hover:bg-third hover:text-black'
-      href='#order'>Objednajte sa</a
-    >
-    <a
-      class='bg-third px-6 py-2 transition-colors hover:bg-primary hover:text-black'
-      href='#contact'>Kontaktujte nás</a
-    >
+  <div class='grid gap-32 lg:grid-cols-2 lg:gap-96'>
+    <div class='flex max-w-[60vw] flex-col gap-6'>
+      <h1
+        class='text-7xl font-thin lg:text-6xl'
+        style='-webkit-text-stroke-width: 1.5px; -webkit-text-stroke-color: grey;'
+      >
+        ZenSki
+      </h1>
+      <p
+        style='-webkit-text-stroke-width: .5px; -webkit-text-stroke-color: grey;'
+        class='text-lg italic'
+      >
+        Doprajte si zimnú dovolenku na nezabudnutie. Lyžiarske stredisko ZenSki
+        je ideálnym miestom pre lyžiarov, snowboardistov, rodiny s deťmi a
+        milovníkov prírody.
+      </p>
+    </div>
+    <div class='flex flex-col gap-4 text-right'>
+      <h2
+        style='-webkit-text-stroke-width: .5px; -webkit-text-stroke-color: grey;'
+        class='text-2xl'
+      >
+        Chcem dostávať novinky
+      </h2>
+      <form class='flex flex-col gap-4 text-sm text-text'>
+        <input
+          type='text'
+          placeholder='Zadajte svoje meno'
+          class='w-full px-4 py-2 text-right placeholder:text-right'
+        />
+        <input
+          type='text'
+          placeholder='Zadajte emailovú adresu'
+          class='w-full px-4 py-2 text-right placeholder:text-right'
+        />
+        <button
+          type='submit'
+          class='bg-primary text-md w-fit self-end border-2 border-white px-6 py-2 text-right text-white'
+          >Odoslať</button
+        >
+      </form>
+    </div>
   </div>
 </section>

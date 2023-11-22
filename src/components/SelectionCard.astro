@@ -1,0 +1,14 @@
+---
+interface Props {
+  number: number;
+  description: string;
+}
+
+const { number, description } = Astro.props;
+---
+
+<article class='flex flex-col gap-2'>
+  <h4 class='text-8xl text-colorful-text'>0{number}.</h4>
+  <h3 class='text-4xl'><slot /></h3>
+  <p class='text-sm italic'>{description}</p>
+</article>

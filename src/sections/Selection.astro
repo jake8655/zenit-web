@@ -1,0 +1,47 @@
+---
+import SelectionCard from '~/components/SelectionCard.astro';
+import SelectionImage from '~/components/SelectionImage.astro';
+import SelectionPlace from '~/components/SelectionPlace.astro';
+---
+
+<section class='min-h-screen grid-rows-5 py-12 lg:grid'>
+  <div
+    class='row-span-2 grid min-h-screen gap-12 pb-10 text-center text-text lg:min-h-0 lg:grid-cols-3 lg:px-[calc((100vw-1140px)/2)]'
+  >
+    <SelectionCard
+      number={1}
+      description='Ponúkame širokú škálu zjazdoviek pre všetky úrovne zručností, vrátane náročných zjazdoviek pre pokročilých, ako aj miernych zjazdoviek pre začiatočníkov a rodiny s deťmi.'
+    >
+      Zjazdovky <br />pre všetkých
+    </SelectionCard>
+    <SelectionCard
+      number={2}
+      description='Stredisko sa nachádza v krásnej horskej oblasti a ponúka nádherné výhľady na okolitú prírodu. Okrem lyžovania a snowboardingu tu môžete využiť aj množstvo ďalších aktivít.'
+    >
+      Prekrásna <br />príroda
+    </SelectionCard>
+    <SelectionCard
+      number={3}
+      description='Lyžiarska škola je skvelou možnosťou pre začiatočníkov, ktorí sa chcú naučiť lyžovať alebo snowboardovať. Lyžiarski inštruktori poskytujú individuálne alebo skupinové lekcie.'
+    >
+      Lyžiarska <br />škola
+    </SelectionCard>
+  </div>
+  <div class='row-span-2 grid min-h-screen pb-4 lg:min-h-0 lg:grid-cols-3'>
+    <SelectionImage description='ušetrite 25%' imgPath='/images/res02.jpg'>
+      Špeciálna <br />ponuka
+    </SelectionImage>
+    <SelectionImage description='už za 3 dni' imgPath='/images/res03.jpg'>
+      Festival
+    </SelectionImage>
+    <SelectionImage description='špeciálne ponuky' imgPath='/images/res01.jpg'>
+      Rodinná dovolenka
+    </SelectionImage>
+  </div>
+  <div class='grid gap-4 p-2 lg:grid-cols-4'>
+    <SelectionPlace title='Štrbské Pleso' imgPath='/images/loc01.jpg' />
+    <SelectionPlace title='Veľké Solisko' imgPath='/images/loc02.jpg' />
+    <SelectionPlace title='Kriváň' imgPath='/images/loc03.jpg' />
+    <SelectionPlace title='Končistá' imgPath='/images/res01.jpg' />
+  </div>
+</section>

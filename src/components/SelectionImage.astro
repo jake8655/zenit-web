@@ -1,0 +1,30 @@
+---
+interface Props {
+  description: string;
+  imgPath: string;
+}
+
+const { description, imgPath } = Astro.props;
+---
+
+<div
+  style=`background-image: url(${imgPath});`
+  class='group flex flex-col items-center bg-cover bg-center pt-4 lg:grayscale lg:transition-all lg:hover:grayscale-0'
+>
+  <h3
+    class='pb-4 text-center text-5xl text-colorful-text-hover lg:text-white lg:transition-colors lg:group-hover:text-colorful-text-hover'
+    style='-webkit-text-stroke-width: 1px; -webkit-text-stroke-color: grey;'
+  >
+    <slot />
+  </h3>
+  <p
+    style='-webkit-text-stroke-width: .5px; -webkit-text-stroke-color: grey;'
+    class='text-xl font-black uppercase text-colorful-text-hover lg:text-white lg:transition-colors lg:group-hover:text-colorful-text-hover'
+  >
+    {description}
+  </p>
+  <button
+    class='my-auto border-2 border-white bg-colorful-bg-hover px-6 py-2 lg:bg-transparent lg:transition-colors lg:hover:bg-colorful-bg-hover'
+    >Rezervovať skipas</button
+  >
+</div>
