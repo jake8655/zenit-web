@@ -7,10 +7,11 @@ Ku spusteniu doleuvedených príkazov je potrebný program [Node.JS](https://nod
 
 Všetky príkazy treba spustiť z koreňového priečinku projektu v termináli:
 
-| Príkaz                    | Funkcia                                          |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Stiahne potrebné npm balíky                      |
-| `npm run start`           | Spustenie projektu                               |
+| Príkaz                    | Potrebný na spustenie     | Funkcia                                          |
+| :------------------------ | :------------------------ | :----------------------------------------------- |
+| `npm install`             | ❌                        |  Stiahnutie potrebných npm balíkov               |
+| `npm run build`           | ❌                        |  Skompilovanie projektu                          |
+| `npm run start`           | ✅                        |  Spustenie projektu                              |
 
-Ku spusteniu príkazov je potrebné internetové pripojenie.
+Ku spusteniu príkazov **je potrebné internetové pripojenie**.
 Po spustení príkazu `npm run start` stránku uvidíte na [http://localhost:4321](http://localhost:4321).
