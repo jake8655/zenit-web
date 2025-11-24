@@ -21,7 +21,9 @@ Potrebné je len spustiť projekt príkazom `npm run start`.
 Ostatné príkazy sú dostupné v prípade potreby.
 
 ## Kontakt
-Dominik Tóth
+V prípade otázok ma neváhajte kontaktovať:
+<br />
+Meno: Dominik Tóth
 <br />
 Mail: [info@dominiktoth.com](mailto:info@dominiktoth.com)
 <br />
