@@ -23,6 +23,7 @@
     "@types/react": "^18.0.21",
     "@types/react-dom": "^18.0.6",
     "astro": "^3.3.0",
+    "caniuse-lite": "^1.0.30001757",
     "dotenv-cli": "^7.3.0",
     "drizzle-orm": "^0.29.0",
     "mysql2": "^3.6.4",
