@@ -1,0 +1,131 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Event",
+  "description": "An event in the calendar",
+  "type": "object",
+  "properties": {
+    "name": {
+      "description": "Name of the event",
+      "type": "string"
+    },
+    "sciences": {
+      "description": "Event sciences",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": ["mat", "fyz", "inf", "bio", "chem", "other", "any"]
+      },
+      "minItems": 1,
+      "uniqueItems": true
+    },
+    "type": {
+      "description": "Event type",
+      "type": "string",
+      "enum": [
+        "sutaz",
+        "seminar",
+        "sustredenie",
+        "vikendovka",
+        "tabor",
+        "olympiada",
+        "prednasky",
+        "other"
+      ]
+    },
+    "date": {
+      "description": "Date information",
+      "type": "object",
+      "properties": {
+        "start": {
+          "description": "Event date or start date if more days",
+          "type": "string",
+          "format": "date"
+        },
+        "end": {
+          "description": "End date",
+          "type": "string",
+          "format": "date"
+        },
+        "text": {
+          "description": "Event date for user",
+          "type": "string"
+        }
+      },
+      "required": ["start"]
+    },
+    "organizers": {
+      "description": "Organizer or list of organizers",
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "link": {
+      "description": "Link to more information",
+      "type": "string",
+      "format": "uri"
+    },
+    "places": {
+      "description": "Place where the event is organized",
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "contestants": {
+      "description": "Contestant information",
+      "type": "object",
+      "properties": {
+        "min": {
+          "description": "Minimal required attended class",
+          "type": ["string", "null"],
+          "pattern": "^(zs[1-9]|ss[1-4])$"
+        },
+        "max": {
+          "description": "Maximal allowed attended class",
+          "type": ["string", "null"],
+          "pattern": "^(zs[1-9]|ss[1-4])$"
+        }
+      },
+      "required": ["min", "max"]
+    },
+    "info": {
+      "description": "Short description of event",
+      "type": "string",
+      "maxLength": 255
+    },
+    "color": {
+      "description": "Override default color based on first science",
+      "type": "string",
+      "anyOf": [
+        { "enum": ["red", "orange", "yellow", "green", "blue", "purple"] },
+        { "pattern": "^#([a-fA-F0-9]{6}|[a-fA-F0-9]{3})$" }
+      ]
+    },
+    "volatile": {
+      "description": "If true, the event may not take place due to COVID-19 restrictions",
+      "type": "boolean",
+      "default": false
+    },
+    "cancelled": {
+      "description": "If true, the event was cancelled",
+      "type": "boolean",
+      "default": false
+    },
+    "notifications": {
+      "description": "Notification settings",
+      "type": "object",
+      "properties": {
+        "remind_days_before": {
+          "description": "How many days before should we notify people",
+          "type": "array",
+          "items": {
+            "type": "number"
+          }
+        }
+      },
+      "required": ["remind_days_before"]
+    }
+  },
+  "required": ["name", "sciences", "type", "date", "organizers", "contestants"]
+}

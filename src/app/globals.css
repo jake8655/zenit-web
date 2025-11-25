@@ -1,21 +1,21 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat");
 @import "tailwindcss";
 
 @layer base {
   :root {
-    --background: #ffffff;
-    --foreground: #171717;
-  }
-
-  @media (prefers-color-scheme: dark) {
-    :root {
-      --background: #0a0a0a;
-      --foreground: #ededed;
-    }
+    --nav-bg: #4299e1;
+    --foreground: #ffffff;
+    --nav-active: #2b6cb0;
   }
 }
 
+* {
+  list-style: none;
+}
+
 @theme inline {
-  --color-background: var(--background);
+  --color-nav-bg: var(--nav-bg);
   --color-foreground: var(--foreground);
-  --font-arial: Arial, Helvetica, sans-serif;
+  --font-montserrat: "Montserrat", sans-serif;
+  --color-nav-active: var(--nav-active);
 }

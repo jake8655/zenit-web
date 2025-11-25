@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import { Navbar } from "@/components/navbar";
 import { TRPCReactProvider } from "@/trpc/react";
 
 export const metadata: Metadata = {
@@ -14,8 +15,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className="antialiased bg-background text-foreground font-arial">
-        <TRPCReactProvider>{children}</TRPCReactProvider>
+      <body className="antialiased bg-background text-foreground font-montserrat font-normal">
+        <TRPCReactProvider>
+          <Navbar />
+          {children}
+        </TRPCReactProvider>
       </body>
     </html>
   );
