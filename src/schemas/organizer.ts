@@ -26,3 +26,14 @@ export type Organizer = {
     | `#${string}`;
   country?: "sk" | "cz";
 };
+
+export const EventTypesToLabels = {
+  sutaz: "súťaž",
+  seminar: "seminár",
+  sustredenie: "sústredenie",
+  vikendovka: "víkendovka",
+  tabor: "tábor",
+  olympiada: "olympiáda",
+  prednasky: "prednáška",
+  other: "iné",
+};

@@ -4,8 +4,8 @@ import { Navbar } from "@/components/navbar";
 import { TRPCReactProvider } from "@/trpc/react";
 
 export const metadata: Metadata = {
-  title: "Zenit25KK",
-  description: "Zenit website",
+  title: "Zenit Organizácie",
+  description: "Platforma pre organizácie a ich podujatia",
 };
 
 export default function RootLayout({
