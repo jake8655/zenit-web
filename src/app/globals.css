@@ -4,8 +4,10 @@
 @layer base {
   :root {
     --nav-bg: #4299e1;
-    --foreground: #ffffff;
+    --foreground: #000000;
     --nav-active: #2b6cb0;
+
+    --brand-blue: #4299e1;
   }
 }
 
@@ -18,4 +20,6 @@
   --color-foreground: var(--foreground);
   --font-montserrat: "Montserrat", sans-serif;
   --color-nav-active: var(--nav-active);
+
+  --color-brand-blue: var(--brand-blue);
 }

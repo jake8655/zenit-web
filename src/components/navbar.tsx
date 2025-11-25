@@ -23,7 +23,7 @@ function Navlink({ href, text }: { href: string; text: string }) {
       <Link
         href={href}
         className={cn(
-          "text-foreground px-1 py-1.5 rounded-md border-foreground border",
+          "text-white px-1 py-1.5 rounded-sm border-white border md:text-2xl md:px-2 md:py-2.5",
           pathname === href && "bg-nav-active border-none",
         )}
       >

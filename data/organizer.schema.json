@@ -1,0 +1,61 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Organizer",
+  "description": "An organizer of event in the calendar",
+  "type": "object",
+  "properties": {
+    "name": {
+      "description": "Name of the organization",
+      "type": "string"
+    },
+    "icon": {
+      "description": "Link to small web optimized logo",
+      "type": "string"
+    },
+    "logo": {
+      "description": "Link to miniature web optimized logo",
+      "type": "string"
+    },
+    "web": {
+      "description": "Link to webpage of the organization",
+      "type": "string",
+      "format": "uri"
+    },
+    "type": {
+      "description": "Organization type",
+      "type": "string",
+      "enum": ["oz", "no", "sro", "as", "statna", "skola", "other"],
+      "default": "other"
+    },
+    "info": {
+      "description": "Short description of organization",
+      "type": "string",
+      "maxLength": 512
+    },
+    "color": {
+      "description": "Override default color based on first science",
+      "type": "string",
+      "anyOf": [
+        {
+          "enum": [
+            "red",
+            "orange",
+            "yellow",
+            "green",
+            "blue",
+            "purple",
+            "black"
+          ]
+        },
+        { "pattern": "^#([a-fA-F0-9]{6}|[a-fA-F0-9]{3})$" }
+      ]
+    },
+    "country": {
+      "description": "The country where the organization resides",
+      "type": "string",
+      "enum": ["sk", "cz"],
+      "default": "sk"
+    }
+  },
+  "required": ["name", "web", "icon"]
+}
